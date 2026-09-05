@@ -1,0 +1,132 @@
+{
+  "version": "2.0",
+  "date": "2026-09-05",
+  "checks": [
+    {
+      "name": "Okada versus 27 original GeoClaw values",
+      "maximumAbsoluteErrorMeters": 8.618106228652778e-14
+    },
+    {
+      "name": "Moment conservation",
+      "cases": 9,
+      "toleranceRelative": 1e-12
+    },
+    {
+      "name": "Still ocean over variable bathymetry",
+      "exactEquilibrium": true
+    },
+    {
+      "name": "Analytical constant-depth standing wave after 500 s",
+      "relativeL2Error": 0.004393343975614989
+    },
+    {
+      "name": "Closed-basin volume conservation after 1200 s",
+      "relativeError": 3.3306690738754696e-15
+    },
+    {
+      "name": "Time-step sensitivity at 6 fixed offshore cells over 60 minutes",
+      "stations": [
+        {
+          "station": "Cape Flattery",
+          "peakDt4": 1.4895678758621216,
+          "peakDt2": 1.4895952939987183,
+          "relativeDifference": 0.00001840643341666226
+        },
+        {
+          "station": "Westport",
+          "peakDt4": 2.444491147994995,
+          "peakDt2": 2.44504976272583,
+          "relativeDifference": 0.00022846763258188574
+        },
+        {
+          "station": "Seaside",
+          "peakDt4": 3.9635634422302246,
+          "peakDt2": 3.9635934829711914,
+          "relativeDifference": 0.0000075791680190784305
+        },
+        {
+          "station": "Newport",
+          "peakDt4": 2.306657552719116,
+          "peakDt2": 2.307514190673828,
+          "relativeDifference": 0.0003712384340578412
+        },
+        {
+          "station": "Coos Bay",
+          "peakDt4": 2.037545680999756,
+          "peakDt2": 2.037073850631714,
+          "relativeDifference": 0.00023162163114287537
+        },
+        {
+          "station": "Crescent City",
+          "peakDt4": 1.151596188545227,
+          "peakDt2": 1.151098608970642,
+          "relativeDifference": 0.0004322649429919778
+        }
+      ]
+    },
+    {
+      "name": "Spatial sensitivity: 4 arcmin vs 2 arcmin at co-located interpolated stations, first hour only; diagnostic, not a convergence claim",
+      "stations": [
+        {
+          "station": "Cape Flattery",
+          "latitude": 48.224999999999994,
+          "longitude": -124.94166666666666,
+          "peak4Arcmin": 1.4892280705161962,
+          "peak2Arcmin": 1.4866249999999774,
+          "relativeDifference": 0.0017509933683470535
+        },
+        {
+          "station": "Westport",
+          "latitude": 46.89166666666666,
+          "longitude": -124.60833333333332,
+          "peak4Arcmin": 2.442172934100464,
+          "peak2Arcmin": 2.6711250000001403,
+          "relativeDifference": 0.08571372208326622
+        },
+        {
+          "station": "Seaside",
+          "latitude": 46.02499999999999,
+          "longitude": -124.27499999999999,
+          "peak4Arcmin": 3.9577464877798056,
+          "peak2Arcmin": 2.6091250000005415,
+          "relativeDifference": 0.5168864994122491
+        },
+        {
+          "station": "Newport",
+          "latitude": 44.758333333333326,
+          "longitude": -124.34166666666667,
+          "peak4Arcmin": 2.3024098825692407,
+          "peak2Arcmin": 2.4111250000000224,
+          "relativeDifference": 0.04508895948189362
+        },
+        {
+          "station": "Coos Bay",
+          "latitude": 43.35833333333333,
+          "longitude": -124.60833333333332,
+          "peak4Arcmin": 2.035523922854327,
+          "peak2Arcmin": 2.281624999999837,
+          "relativeDifference": 0.10786219345664927
+        },
+        {
+          "station": "Crescent City",
+          "latitude": 41.758333333333326,
+          "longitude": -124.475,
+          "peak4Arcmin": 1.149886348613129,
+          "peak2Arcmin": 1.2991249999999983,
+          "relativeDifference": 0.11487628318050191
+        }
+      ]
+    },
+    {
+      "name": "Fine-grid extreme scenario over three hours",
+      "cfl": 0.20287171222640926,
+      "maximumDisplacementDepthRatio": 1.5127297650911644
+    },
+    {
+      "name": "Three-hour extreme scenarios remain finite",
+      "cases": 3,
+      "magnitude": 9.2,
+      "note": "Finite numerical output does not imply small-amplitude physics remains valid."
+    }
+  ]
+}

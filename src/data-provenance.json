@@ -1,0 +1,43 @@
+{
+  "retrieved": "2026-09-05",
+  "sha256": {
+    "etopo-subset.json": "1e64c16d99baa0a7344d69db6dbe795360e6c82c1e5deaace13470da8891eead",
+    "info_sz.dat.txt": "b10c3ecf96f2133feb71207f42fdb1b3d35f2683a47d934e5988cd52c656ab4f",
+    "dtopotools.py": "4e20105dc4f4f9ee4344573505c27a0dd1cfa0e88846eb4fb0112198802501a9"
+  },
+  "bounds": [
+    -133.49166666666667,
+    39.008333333333326,
+    -120.99166666666667,
+    52.008333333333326
+  ],
+  "native": "60 arc-second ETOPO 2022; every second point requested (2 arc-minute terrain); 2x2 averaging for 4 arc-minute solver",
+  "faults": [
+    "acsza56",
+    "acszb56",
+    "acsza57",
+    "acszb57",
+    "acsza58",
+    "acszb58",
+    "acsza59",
+    "acszb59",
+    "acsza60",
+    "acszb60",
+    "acsza61",
+    "acszb61",
+    "acsza62",
+    "acszb62",
+    "acsza63",
+    "acszb63",
+    "acsza64",
+    "acszb64",
+    "acsza65",
+    "acszb65"
+  ],
+  "displaySampling": "2 arc-minute samples from the 60 arc-second product",
+  "solverModes": {
+    "fine": "2 arc-minute unaveraged embedded samples, 2-second steps",
+    "fast": "4 arc-minute grid, 2x2 sample averages, 4-second steps"
+  },
+  "snapshots": "40 seconds; per-frame scaled signed int16"
+}
