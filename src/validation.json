@@ -1,6 +1,6 @@
 {
-  "version": "2.0",
-  "date": "2026-09-05",
+  "version": "2.1",
+  "date": "2026-09-23",
   "checks": [
     {
       "name": "Okada versus 27 original GeoClaw values",
@@ -17,11 +17,11 @@
     },
     {
       "name": "Analytical constant-depth standing wave after 500 s",
-      "relativeL2Error": 0.004393343975614989
+      "relativeL2Error": 0.004393343975614917
     },
     {
       "name": "Closed-basin volume conservation after 1200 s",
-      "relativeError": 3.3306690738754696e-15
+      "relativeError": 2.886579864025407e-15
     },
     {
       "name": "Time-step sensitivity at 6 fixed offshore cells over 60 minutes",
@@ -30,7 +30,7 @@
           "station": "Cape Flattery",
           "peakDt4": 1.4895678758621216,
           "peakDt2": 1.4895952939987183,
-          "relativeDifference": 0.00001840643341666226
+          "relativeDifference": 1.840643341666226e-05
         },
         {
           "station": "Westport",
@@ -42,7 +42,7 @@
           "station": "Seaside",
           "peakDt4": 3.9635634422302246,
           "peakDt2": 3.9635934829711914,
-          "relativeDifference": 0.0000075791680190784305
+          "relativeDifference": 7.5791680190784305e-06
         },
         {
           "station": "Newport",
@@ -79,48 +79,48 @@
           "station": "Westport",
           "latitude": 46.89166666666666,
           "longitude": -124.60833333333332,
-          "peak4Arcmin": 2.442172934100464,
+          "peak4Arcmin": 2.442172934100478,
           "peak2Arcmin": 2.6711250000001403,
-          "relativeDifference": 0.08571372208326622
+          "relativeDifference": 0.08571372208326089
         },
         {
           "station": "Seaside",
           "latitude": 46.02499999999999,
           "longitude": -124.27499999999999,
-          "peak4Arcmin": 3.9577464877798056,
+          "peak4Arcmin": 3.9577464877798074,
           "peak2Arcmin": 2.6091250000005415,
-          "relativeDifference": 0.5168864994122491
+          "relativeDifference": 0.5168864994122497
         },
         {
           "station": "Newport",
           "latitude": 44.758333333333326,
           "longitude": -124.34166666666667,
-          "peak4Arcmin": 2.3024098825692407,
+          "peak4Arcmin": 2.30240988256939,
           "peak2Arcmin": 2.4111250000000224,
-          "relativeDifference": 0.04508895948189362
+          "relativeDifference": 0.04508895948183167
         },
         {
           "station": "Coos Bay",
           "latitude": 43.35833333333333,
           "longitude": -124.60833333333332,
-          "peak4Arcmin": 2.035523922854327,
+          "peak4Arcmin": 2.0355239228551323,
           "peak2Arcmin": 2.281624999999837,
-          "relativeDifference": 0.10786219345664927
+          "relativeDifference": 0.10786219345629644
         },
         {
           "station": "Crescent City",
           "latitude": 41.758333333333326,
           "longitude": -124.475,
-          "peak4Arcmin": 1.149886348613129,
+          "peak4Arcmin": 1.149886348601218,
           "peak2Arcmin": 1.2991249999999983,
-          "relativeDifference": 0.11487628318050191
+          "relativeDifference": 0.11487628318967025
         }
       ]
     },
     {
       "name": "Fine-grid extreme scenario over three hours",
       "cfl": 0.20287171222640926,
-      "maximumDisplacementDepthRatio": 1.5127297650911644
+      "maximumDisplacementDepthRatio": 1.51272976509147
     },
     {
       "name": "Three-hour extreme scenarios remain finite",

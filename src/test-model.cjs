@@ -1,7 +1,7 @@
 'use strict';
 const assert=require('node:assert/strict'),fs=require('node:fs'),M=require('./model.js'),D=require('./data.js');
 const defaults={segment:'full',magnitude:9,hypocenter:50,ruptureSpeed:2.5,rise:60,slip:'tapered'};
-const reports={version:'2.0',date:'2026-09-05',checks:[]};
+const reports={version:'2.1',date:'2026-09-23',checks:[]};
 let maxRef=0;for(const q of require('./okada-reference.json'))maxRef=Math.max(maxRef,Math.abs(M.okada(D.faults.find(f=>f.name===q.fault),q.lon,q.lat)-q.value));assert(maxRef<1e-9);reports.checks.push({name:'Okada versus 27 original GeoClaw values',maximumAbsoluteErrorMeters:maxRef});
 for(const segment of ['full','north','south'])for(const slip of ['uniform','tapered','shallow']){const g=M.scenario(D,{...defaults,segment,slip}),mo=g.faults.reduce((m,f)=>m+g.mu*f.length*f.width*f.slip,0);assert(Math.abs(mo/g.moment-1)<1e-12);}reports.checks.push({name:'Moment conservation',cases:9,toleranceRelative:1e-12});
 const realGrid=M.gridFrom(D);const still=new M.Solver(realGrid);for(let i=0;i<100;i++)still.advanceStep();assert(still.eta.every(v=>v===0));assert(still.u.every(v=>v===0));reports.checks.push({name:'Still ocean over variable bathymetry',exactEquilibrium:true});
