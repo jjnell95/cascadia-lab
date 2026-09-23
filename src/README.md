@@ -1,6 +1,6 @@
 # Cascadia Lab 2
 
-A portable, offline earthquake-source and tsunami-propagation explorer. Open the standalone `CascadiaLab.html` in any modern browser. The source `index.html` also runs locally (using a cooperative main-thread fallback if browser file security prevents workers).
+A portable, offline earthquake-source and tsunami-propagation explorer. The self-contained build is `../index.html` at the repository root; open it in any modern browser. This directory's `index.html` also runs locally (using a cooperative main-thread fallback if browser file security prevents workers).
 
 ## What changed from version 1
 
@@ -9,7 +9,7 @@ A portable, offline earthquake-source and tsunami-propagation explorer. Open the
 - Added finite rupture propagation and smooth slip rise time; full, northern, and southern scenarios; and moment-preserving uniform, tapered, and shallow-emphasis slip distributions.
 - The map now displays the solver's wave field, not unrelated rings. Terrain relief, coastlines, and depth contours come from the downloaded relief grid.
 - Added fine 2 arc-minute mode (default) and fast 4 arc-minute mode, virtual offshore stations, comparative wave traces, arbitrary ocean-point inspection, map pan/zoom, peak and source layers, and CSV export.
-- Moved computation into a Web Worker, with progress and cancellation on rerun. The standalone app contains its own data and worker source.
+- Moved computation into a Web Worker, with progress and cancellation on rerun. The map animates a live preview of the water level while the run computes. The standalone app contains its own data and worker source.
 
 ## Use
 
@@ -17,7 +17,9 @@ A portable, offline earthquake-source and tsunami-propagation explorer. Open the
 2. Choose a preset, or adjust source assumptions and press Run scenario. Pending edits are labeled.
 3. Play, scrub through three hours, or switch map layers. Peak and seafloor layers show full-run peak or final deformation; only the water-level layer follows playback.
 4. Choose one of the offshore station buttons, or click an ocean cell. Coordinates and depth identify the actual sampled cell.
-5. Export all six station traces with scenario metadata and full-precision peak/threshold results.
+5. Export all six station traces (plus a clicked ocean point, if selected) with scenario metadata and full-precision peak/threshold results.
+
+Keyboard: with the map focused, arrow keys pan, `+`/`−` zoom and `0` resets the view. Space plays or pauses from anywhere outside a form control. Presets restore every source assumption (slip, origin, rise time, rupture speed) but keep the chosen ocean resolution.
 
 ## Scientific limits
 
@@ -32,9 +34,9 @@ In a first-hour resolution comparison at co-located ocean points, coarse-grid pe
 ## Rebuild and test
 
 - `node test-model.cjs --report` runs the dependency-free scientific checks and writes validation.json.
-- `python3 build-standalone.py` rebuilds the standalone HTML in the parent directory and embeds the GeoClaw license.
+- `python3 build-standalone.py` rebuilds the standalone `../index.html` and embeds the GeoClaw license.
 - `python3 -m http.server 8765` in this directory serves the multi-file source at http://localhost:8765/ (optional; no server is needed for the standalone app).
-- Browser smoke tests are included as `test-browser.cjs`. Install Playwright in a development environment and set `CHROME_PATH` if Chromium is not bundled. Run `node test-browser.cjs` with `APP_PATH` optionally pointing to a standalone build.
+- Browser smoke tests are included as `test-browser.cjs`. Install Playwright in a development environment and set `CHROME_PATH` if Chromium is not bundled. Run `node test-browser.cjs` with `APP_PATH` optionally pointing to a different build. A full Fine run takes roughly 15–30 seconds depending on the machine, so the test allows up to three minutes per step.
 
 ## Files
 
